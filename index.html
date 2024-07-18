@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cetak Dokumen</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #FAFAFA;
+      font: 12pt "times new roman";
+    }
+
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+   
+    }
+
+    header .header-left, header .header-right {
+        width: 15%;
+    }
+
+    header .header-left img, header .header-right img {
+        width: 100%;
+        height: auto;
+    }
+
+    header .header-center {
+        width: 70%;
+    }
+
+    header h4, header h5{
+        margin: 5px 0;
+    }
+    header p  {
+        margin: 5px 0;
+        font-size: 50%;
+    }
+    header h4 {
+        font-size: 10px;
+    }
+
+
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 15mm;
+      margin: 10mm auto;
+      border: 1px #D3D3D3 solid;
+      border-radius: 5px;
+      background: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .subpage {
+      padding: 1cm;
+      border: 5px red solid;
+      height: 257mm;
+      outline: 2cm #FFEAEA solid;
+
+    }
+    
+    td {
+      padding-top: 5px;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+      }
+
+      .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+      }
+    }
+    .raise-table td {
+      border: black solid 1px;
+    }
+    .table-data td {
+      border: none;
+    }
+    .line{
+      border-bottom: black dotted 1px;
+    }
+    .p-absolut{
+      top:0;
+      left:0;
+      
+      position: relative;
+    }
+    .p-relatif {
+      top:0;
+      left:0;
+      vertical-align: top;
+    }
+    .table-data-p td{
+      border: none;
+    }
+    .bg-black{
+      background-color: black;
+    }
+    .bg-yellow{
+      background-color: yellow;
+    }
+    .bg-red{
+      background-color: red;
+    }
+    .bg-green{
+      background-color: green;
+    }
+    .bg-gray{
+      background-color: whitesmoke;
+    }
+    .table-pengatar td{
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="book">
+    <div class="page" id="result">
+
+      <table class="raise-table" style="width: 100%; border-collapse: collapse; position: relative;">
+        <tr>
+          <td colspan="2" style="text-align: center;">
+            <header>
+              <div class="header-left">
+                  <img src="/asset/img/kabupaten-banyuwangi1685453554_0b418421a0f1960a0e0d.png" alt="Left Logo">
+              </div>
+              <div class="header-center" style="vertical-align: top; margin: 0px; padding: 2px;">
+                  <h4>PEMERINTAH KABUPATEN BANYUWANGI</h1>
+                  <h4>DINAS KESEHATAN</h2>
+                  <h5>UPTD PUSKESMAS SUMBERBERAS</h3>
+                  <p>Jl. Raya Sidomulyo No. 381 Sumberberas Telp. (0333) 598518</p>
+                  <p>e-mail: sumberberas.pkm@yahoo.com</p>
+                  <p style="font-weight: bold; font-size:10px;">MUNCAR 68472</p>
+              </div>
+              <div class="header-right">
+                  <img src="/asset/img/puskesmas.png" alt="Right Logo">
+              </div>
+          </header>
+          </td>
+          <td class="border p-relatif" colspan="2" rowspan="2" >
+            <div class="p-relatif">
+              <table class="table-data" style="border-collapse: collapse; width: 80%;">
+                <tr>
+                  <td>Nama</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Jenis Kelamin</td>
+                  <td>:</td>
+                  <td>L/P</td>
+                </tr>
+                <tr>
+                  <td>No RM</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Tanggal Lahir</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Nama KK</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>NIK</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>No BPJS</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Umum</td>
+                  <td>:</td>
+                  <td>....... <span style="margin-left: 5px;">JPKMB:......</span></td>
+                </td>
+              </td>
+              </tr>
+
+              </table>
+            </div>
+          </td>
+          
+        </tr>
+        <tr>
+          <td class="border bg-gray" colspan="2" style="width: 50%;">
+            <p style="margin: auto; padding:20px; text-align: center; font-size: 20px; font-weight: bold;">Traise Pasien Gawat Darurat</p>
+          </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+              <p style="padding: 2px;margin:0px">Pasien datang dan kontak pertama kali dengan petugas Triase</p>
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="border: none;">Tanggal :........... </td>
+                  <td style="border: none;">Jam :.............</td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="1" colspan="2">
+              <table class="table-pengatar" style="width: auto; border-collapse: collapse;">
+                <tr>
+                  <td>Nama Pengantar</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>No.Hp</td>
+                  <td>:</td>
+                  <td></td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table class="table-data-p" style="width: auto; border-collapse: collapse;">
+              <tr>
+                <td>Anamnesa</td>
+                <td>:</td>
+                <td>...............</td>
+              </tr>
+
+            </table>
+
+            
+          </td>
+        </tr>
+        <tr> 
+          <td colspan="4">
+            <table class="table-data-p" style="width: auto; border-collapse: collapse;">
+              <tr>
+                <td>Riwayat Penyakit</td>
+                <td>:</td>
+                <td>...............</td>
+              </tr>
+
+            </table>
+
+          </td>
+          
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table class="table-data-p" style="width: auto; border-collapse: collapse;">
+              <tr>
+                <td>Alergi</td>
+                <td>:</td>
+                <td>...............</td>
+              </tr>
+
+            </table>
+
+          </td>
+          
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table class="table-data-p" style="width: auto; border-collapse: collapse;">
+              <tr>
+                <td>Anamnesa</td>
+                <td>:</td>
+                <td><span style="margin-left: 10px;">TD =.... mmHg.</span> <span style="margin-left: 10px;">Nadi =...x/mnt</span> <span style="margin-left: 10px;">T =....°C</span><span style="margin-left: 10px;">RR = ....X/mnt</span></td>
+              </tr>
+
+            </table>
+
+          </td>
+          
+        </tr>
+        <tr>
+          <td colspan="4">
+            <p>Keadaan Umum :</p>
+          </td>
+        </tr>
+           <!--baris selanjutnya-->
+        <tr>
+          <td colspan="4" style="text-align: center;">
+            <h5>SURVEY PRIMER</h5>
+          </td>
+        </tr>
+        <!--baris selanjutnya-->
+        <tr class="p-relatif">
+          <td class="p-relatif bg-red">
+              <div class="p-absolut">
+                <p style="margin: 0px;">RESPONSE AWAL</p>
+                <div>
+                  <input  type="checkbox" name="" id="">
+                  <label for="">Tidak ada response</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="" id="">
+                  <label for="">Merespons Nyeri</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="" id="">
+                  <label for="">Kejang</label>
+                </div>
+              </div>
+          </td>
+          <td class="p-relatif bg-red">
+            <div class="p-absolut">
+              <p style="margin: 0px;">RESPONSE AWAL</p>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">Merespons Suara</label>
+              </div>
+            </div>
+          </td>
+          <td class="p-relatif bg-yellow">
+            <div class="p-absolut">
+              <p style="margin: 0px;">RESPONSE AWAL</p>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">Sadar</label>
+              </div>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">KU lemah</label>
+              </div>
+            </div>
+          
+          </td>
+          <td class="p-relatif bg-green">
+
+            <div class="p-absolut">
+              <p style="margin: 0px;">RESPONSE AWAL</p>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">Sadar</label>
+              </div>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">KU baik</label>
+              </div>
+            </div>
+          
+          </td>
+        
+        </tr>
+     
+        <!--baris selanjutnya-->
+        <tr class="p-relatif">
+          <td class="p-relatif bg-red">
+            <div class="p-absolut">
+              <p style="margin: 0px;">JALAN NAFAS</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Obstruksi</label>
+            </div>
+            </div>
+            
+          </td>
+          <td class="p-relatif bg-red">
+            <div class="p-absolut">
+              <p style="margin: 0px;">JALAN NAFAS</p>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">Ancaman Obstruksi</label>
+              </div>
+            </div>
+          </td>
+          <td class="p-relatif bg-yellow">
+            <div class="p-absolut">
+              <p style="margin: 0px;">JALAN NAFAS</p>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">Bebas</label>
+              </div>
+            </div>
+          </td>
+          <td class="p-relatif bg-green">
+            <div class="p-absolut">
+              <p style="margin: 0px;">JALAN NAFAS</p>
+              <div>
+                <input type="checkbox" name="" id="">
+                <label for="">Bebas</label>
+              </div>
+            </div>
+           
+          </td>
+        </tr>
+        <!-- baris selanjutnya -->
+        <tr class="p-relatif">
+          <td class="p-relatif bg-red">
+            <p style="margin: 0px;">PERNAFASAN</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Henti nafas (apneu/gaspin)</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Sesak nafas berat</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">RR < 10x/ menit</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">RR < 32x/ menit</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Sianosis</label>
+            </div>
+          </td>
+          <td class="p-relatif bg-red">
+            <p style="margin: 0px;">PERNAFASAN</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Sesak nafas</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">RR > 32x/menit</label>
+            </div>
+            
+          </td>
+          <td class="p-relatif bg-yellow
+            <p style="margin: 0px;">PERNAFASAN</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Sesak nafas</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">RR normal</label>
+            </div>
+          </td>
+          <td class="p-relatif bg-green">
+            <p style="margin: 0px;">PERNAFASAN</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Normal</label>
+            </div>
+          </td>
+        </tr>
+         <!-- baris selanjutnya -->
+         <tr class="p-relatif">
+          <td class="p-relatif bg-red">
+            <div class="p-absolut">
+              <p style="margin: 0px;">SIRKULASI</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Henti jantung</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Nadi Lemah</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Akral dingin</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Pengisian kapiler > 2 detik</label>
+            </div>
+            </div>
+            
+          </td>
+          <td class="p-relatif bg-red">
+            <p style="margin: 0px;">SIRKULASI</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Nadi Iregular</label>
+            </div>
+            
+          </td>
+          <td class="p-relatif bg-yellow">
+            <p style="margin: 0px;">SIRKULASI</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Nadi kuat</label>
+            </div>
+          </td>
+          <td class="p-relatif bg-green">
+            <p style="margin: 0px;">Response Awal</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Nadi kuat</label>
+            </div>
+          </td>
+        </tr>
+         <!-- baris selanjutnya -->
+         <tr>
+          <td class="bg-red">
+            <p style="margin: 0px;">KATEGORI 1</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">RESUSITANSI</label>
+            </div>
+          </td>
+          <td class="bg-red" style="margin: 0px;">
+            <p style="margin: 0px;">KATEGORI 2</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">EMERGENSI</label>
+            </div>
+            
+          </td>
+          <td class="bg-yellow">
+            <p style="margin: 0px;">KATEGORI 3/p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">URGENSI</label>
+            </div>
+          </td>
+          <td class="bg-green">
+            <p style="margin: 0px;">KATEGORI 4</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">NON URGENSI</label>
+            </div>
+          </td>
+        </tr>
+         <!-- baris selanjutnya -->
+         <tr>
+           <td class="bg-black" colspan="4" style="color: white;">
+            <div style="width: 100%; text-align: center;">
+              <input type="checkbox" name="" id="">
+              <label for="">KATEGORI 5 :  PASIEN DATANG SUDAH MENINGAL</label>
+            </div>
+           </td>
+         </tr>
+
+
+         <tr>
+          <td colspan="4" style="text-align: start;">
+            <P>Kondisi pasien pulang :</P>
+          </td>
+         </tr>
+
+         <tr>
+          <td colspan="2" style="width: 30%;">
+            <p style="margin: 0px;">Keputusan Triase Jam:.....</p>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Tindakan di Ruang Tindakan</label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="">
+              <label for="">Rujuk ke ........</label>
+            </div>
+          </td>
+          <td>
+            <div style="width: 100%; text-align: center;">
+              <h6>Petugas Ruang Tindakan</h6>
+              <p style="margin-top: 50px;">..........................</p>
+            </div>
+          </td>
+          <td>
+            <div style="width: 100%; text-align: center;">
+              <h6>Dokter,</h6>
+              <p style="margin-top: 50px;">..........................</p>
+            </div>
+          </td>
+         </tr>
+      </table>
+    </div>
+  </div>
+    
+</body>
+
+</html>
